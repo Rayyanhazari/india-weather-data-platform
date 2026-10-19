@@ -184,6 +184,13 @@ The latest validation run returned **PASS**, with 42 observations across six cit
 ![SQL Server data quality results](screenshots/data-quality-check.png)
 
 
+## Daily Weather Analytics
+
+The SQL analytics layer aggregates weather observations by city and date, including observation counts, average and maximum temperatures, maximum feels-like temperature, and average humidity.
+
+![Daily weather analytics results](screenshots/daily-weather-analytics.png)
+
+
 ## Limitations and Future Improvements
 
 - Current observations only; historical coverage depends on successful scheduled runs.
