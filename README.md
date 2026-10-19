@@ -181,7 +181,7 @@ The pipeline includes SQL checks for missing expected cities, invalid weather me
 
 The latest validation run returned **PASS**, with 42 observations across six cities and no issues reported by these checks.
 
-![SQL Server data quality results](screenshots/data-quality-checks.png)
+![SQL Server data quality results](screenshots/data-quality-check.png)
 
 
 ## Limitations and Future Improvements
