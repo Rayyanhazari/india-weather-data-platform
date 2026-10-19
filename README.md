@@ -12,36 +12,21 @@ Hyderabad, Delhi, Mumbai, Chennai, Bengaluru, and Kolkata.
 
 ## Architecture
 
-```text
-Open-Meteo Weather API
-          |
-          v
-   Python Extraction
-  - HTTP requests
-  - Retry handling
-  - Data validation
-          |
-          v
-    Raw JSON Files
-      data/raw/
-          |
-          v
-   Python SQL Loader
-  - Timestamp conversion
-  - Duplicate checks
-  - Transaction handling
-          |
-          v
- Microsoft SQL Server
-   WeatherObservations
-          |
-          v
-     SQL Analytics
-  - Latest city weather
-  - Daily city summaries
-  - Temperature comparisons
-  - Data-quality checks
+
+```mermaid
+flowchart TD
+    A["Open-Meteo Weather API"] --> B["Python Extraction"]
+    B --> B1["HTTP Requests · Retry Handling · Validation"]
+    B --> C["Raw JSON Files<br/>data/raw/"]
+    C --> D["Python SQL Loader"]
+    D --> D1["Timestamp Conversion · Duplicate Checks · Transactions"]
+    D --> E[("SQL Server<br/>WeatherObservations")]
+    E --> F["SQL Analytics Views"]
+    E --> G["Data Quality Checks"]
+    H["Pipeline Orchestrator"] -. "Runs stages" .-> B
+    H -. "Runs stages" .-> D
 ```
+
 
 ## Tech Stack
 
@@ -122,6 +107,7 @@ india-weather-data-platform/
 ```
 
 Raw data files and logs are generated during execution. They may not be included in the repository.
+
 
 ## Prerequisites
 
