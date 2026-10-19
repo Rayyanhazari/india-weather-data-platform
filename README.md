@@ -174,6 +174,16 @@ Windows Task Scheduler can launch the pipeline on a recurring schedule using the
 
 Scheduled collection depends on the computer being powered on and able to access the internet and SQL Server. Missed current-weather observations are not automatically recovered by this pipeline.
 
+
+## Data Quality Results
+
+The pipeline includes SQL checks for missing expected cities, invalid weather measurements, and duplicate city/timestamp records.
+
+The latest validation run returned **PASS**, with 42 observations across six cities and no issues reported by these checks.
+
+![SQL Server data quality results](screenshots/data-quality-checks.png)
+
+
 ## Limitations and Future Improvements
 
 - Current observations only; historical coverage depends on successful scheduled runs.
@@ -191,3 +201,4 @@ Weather observations are retrieved from the [Open-Meteo API](https://open-meteo.
 ## Project Goal
 
 The goal is to demonstrate practical data engineering skills: API ingestion, raw-data persistence, relational loading, SQL analytics, data-quality checks, logging, testing, and local scheduling.
+
